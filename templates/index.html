@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação de Currículos com IA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Envie seu currículo para avaliação</h1>
+
+    <!-- Formulário de envio de currículo -->
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Escolha o arquivo do currículo:</label>
+        <input type="file" id="file" name="file"  required>
+
+        <label for="tipo_vaga">Tipo de Vaga:</label>
+        <input type="text" id="tipo_vaga" name="tipo_vaga" placeholder="Ex: Desenvolvedor Web" required>
+
+        <label for="profissao">Profissão:</label>
+        <input type="text" id="profissao" name="profissao" placeholder="Ex: Engenharia de Software" required>
+
+        <label for="descricao_empresa">Descrição da Empresa:</label>
+        <textarea id="descricao_empresa" name="descricao_empresa" rows="4" placeholder="Descreva a empresa que você pretende aplicar..." required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <h2>Currículos avaliados recentemente:</h2>
+    <ul>
+        {% for avaliacao in avaliacoes %}
+            <li>
+                <a href="{{ url_for('avaliacao_detalhes', avaliacao_id=avaliacao.id) }}">
+                    {{ avaliacao.arquivo_nome }} - {{ avaliacao.tipo_vaga }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

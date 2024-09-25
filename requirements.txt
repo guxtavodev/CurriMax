@@ -1,0 +1,8 @@
+
+docx==0.2.4
+Flask==3.0.3
+Flask-SQLAlchemy==3.1.1
+google-generativeai==0.8.1
+Markdown==3.7
+PyPDF2==3.0.1
+SQLAlchemy==2.0.35

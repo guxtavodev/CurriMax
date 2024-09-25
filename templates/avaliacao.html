@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Avaliação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Detalhes da Avaliação</h1>
+
+    <h2>Arquivo: {{ avaliacao.arquivo_nome }}</h2>
+
+    <h3>Informações Adicionais:</h3>
+    <p><strong>Tipo de Vaga:</strong> {{ avaliacao.tipo_vaga }}</p>
+    <p><strong>Profissão:</strong> {{ avaliacao.profissao }}</p>
+    <p><strong>Descrição da Empresa:</strong> {{ avaliacao.descricao_empresa }}</p>
+
+    <h3>Conteúdo do Currículo:</h3>
+    <pre>{{ avaliacao.arquivo_conteudo }}</pre>
+
+    <h3>Avaliação:</h3>
+    <p>{{ avaliacao.avaliacao | safe }}</p>
+
+    <h3>Sugestões de Melhorias:</h3>
+    <p>{{ avaliacao.melhorias | safe }}</p>
+
+    <a href="/">Voltar</a>
+</body>
+</html>

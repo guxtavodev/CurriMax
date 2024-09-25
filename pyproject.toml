@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "repl-nix-currimax"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+docx = "^0.2.4"
+flask = "^3.0.3"
+flask-sqlalchemy = "^3.1.1"
+google-generativeai = "^0.8.1"
+textract = "^1.6.5"
+markdown = "^3.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
